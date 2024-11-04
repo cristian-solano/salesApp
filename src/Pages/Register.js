@@ -10,7 +10,7 @@ import { addDoc, collection } from 'firebase/firestore';
 
 const Register = () => {
 
-    const {register, handleSubmit, setError, formState: {isValid, errors}} = useForm()
+    const {register, handleSubmit, setError, formState: {errors}} = useForm()
     const [watch, setWatch] = useState(true)
     const [watch2, setWatch2] = useState(true)
     const [messageConfirm, setMessageConfirm] = useState(null)

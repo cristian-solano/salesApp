@@ -42,7 +42,7 @@ const Orders = () => {
         const orderRef = doc(db, "orders", id_order);
         await updateDoc(orderRef, { currentState: newStatus });
 
-        alert("actualizado el pedido" + " " + id_order)
+        alert(`actualizado el pedido ${id_order}`)
         setSales(prevOrders =>
             prevOrders.map(order =>
                 order.id === id_order ? { ...order, currentState: newStatus } : order
