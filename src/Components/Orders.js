@@ -82,7 +82,6 @@ const Orders = () => {
         {sales.length > 0 ? sales.map((items, i) => (
           <div className='orders-info' key={items.id}>
             <h3>Recibo No. {items.id}</h3>
-            <p></p>
             <p>Fecha de pedido:{items.createAt}</p>
             <p>Cliente: {items.email}</p>
             <div className='order-info-products-content'>

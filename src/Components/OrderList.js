@@ -25,16 +25,17 @@ const OrderList = ({myproducts}) => {
     const id_person = sessionStorage.getItem("id")
 
     const onSubmit = async(res) => {
-        
+        const totalamount = myproducts.reduce((total, item) => total + item.price, 0)
         const data = 
             {
-                amount: myproducts.reduce((total, item) => total + item.price, 0),
+                amount: totalamount,
                 email: name,
                 id_client: id_person,
                 items: myproducts,
                 createAt: new Date(), 
-                currentState: "pendiente"
+                currentState: totalamount > 1000 ? "en revisión" : "pendiente"
             }
+
 
             try {
                 await addDoc(collection(db, "orders"), data);
