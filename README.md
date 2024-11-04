@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Proyecto de Gestion de pedidos (salesApp)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto es una aplicación web desarrollada con ReactJS que permite a los usuarios crear una cuenta o iniciar sesión con Google para gestionar sus pedidos. La aplicación hace uso de Firebase para autenticación y almacenamiento de datos, junto con otras bibliotecas esenciales para su funcionamiento.
 
-## Available Scripts
+## Tecnologías y Paquetes Utilizados
 
-In the project directory, you can run:
+- **ReactJS** - Biblioteca de JavaScript para crear interfaces de usuario.
+- **Firebase** - Plataforma de Google para autenticación y base de datos en tiempo real.
+- **React Router Dom** - Para gestionar la navegación y el enrutamiento entre componentes.
+- **React Hook Form** - Para manejar formularios y validación de datos de forma sencilla.
 
-### `npm start`
+## Instalación
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Sigue estos pasos para instalar y ejecutar la aplicación en tu entorno local:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 1. Clonar el Repositorio
 
-### `npm test`
+```bash
+git clone https://github.com/tu-usuario/nombre-del-repositorio.git
+cd nombre-del-repositorio
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+npm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+firebase
+react-router-dom
+react-hook-form
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+``` 
 
-### `npm run eject`
+### 2. Configuración de Firebase
+1. Crea un proyecto en Firebase si aún no lo has hecho.
+2. Agrega una aplicación web a tu proyecto de Firebase.
+3. Copia la configuración de Firebase y pégala en tu archivo firebase.js en la carpeta /src de tu proyecto.
+4. Configura la autenticación en Firebase habilitando los métodos de autenticación con correo electrónico/contraseña y Google.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 3. Ejecutar la Aplicación
+Ejecuta la aplicación en modo de desarrollo con el siguiente comando
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm start
+``` 
+La aplicación estará disponible en http://localhost:3000.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### Características
+* Registro de Usuarios: Los usuarios pueden registrarse con su correo electrónico y contraseña.
+* Inicio de Sesión con Google: Autenticación rápida usando una cuenta de Google.
+* Gestión de Pedidos: Los usuarios pueden realizar pedidos después de iniciar sesión. 
+* Dentro del mismo perfil se pueden actualizar los estados de los pedidos y eliminar los pedidos que se consideren necesarios.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Scripts Disponibles
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- npm start - Inicia la aplicación en modo desarrollo.
+- npm run build - Compila la aplicación para producción en la carpeta build.
