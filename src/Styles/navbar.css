@@ -1,0 +1,27 @@
+.navbar-container {
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: var(--fourth-color);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.navbar-content {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+}
+
+.navbar-content img {
+    width: 45px;
+
+}

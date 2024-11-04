@@ -1,0 +1,115 @@
+.orders-container {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to top, #fbfbfbcd, #bdc2c783), url('../Images/delivery.jpeg') fixed;
+    background-size: cover;
+    padding: 90px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px
+}
+
+.orders-content {
+    width: auto;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+
+
+.orders-content .orders-info:nth-child(odd) {
+    background-color: #cdcdcd
+}
+
+.orders-info {
+    width: 300px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    background-color: var(--secondary-color);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+
+.orders-info h3 {
+    font-size: 20px
+}
+
+.orders-info p{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+}
+
+.order-info-products-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.order-info-products-content p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.order-info-products-content p:nth-child(2){
+    width: 100px;
+}
+
+
+
+
+
+.order-info-products {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+}
+
+.order-info-actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;  
+}
+
+.order-info-actions button{
+    background: none;
+    outline: none;
+    border: none;
+    background-color: var(--fourth-color);
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    transition: 1s;
+}
+
+.order-info-actions button:hover {
+    
+    background-color: rgb(210, 42, 42);
+}
+
+.order-info-actions button img {
+    width: 20px;
+}
+

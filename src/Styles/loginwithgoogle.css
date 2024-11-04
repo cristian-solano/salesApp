@@ -1,0 +1,51 @@
+.login-google-container {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to top, #fbfbfbcd, #bdc2c745), url('../Images/withemailback.jpeg') fixed;
+    background-size: cover;
+    padding: 70px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.login-google-button {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-google-button button {
+    width: 300px;
+    height: 70px;
+    padding: 20px;
+    font-size: 25px;
+    border: none;
+    outline: none;
+    background-color: var(--secondary-color);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 5px;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.login-google-button button:hover {
+    background-color: var(--fourth-color);
+}
+
+.login-google-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 30px;
+    border-left: 1px solid;
+}
+
+.login-google-message h3 {
+    font-size: 35px;
+}
+
