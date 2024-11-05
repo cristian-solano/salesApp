@@ -65,7 +65,7 @@ const LoginWithEmail = () => {
                 </div>
                 <button type="submit">Entrar</button>
                 {newError !== null ?
-                <div>
+                <div className='login-email-error'>
                     <p>{newError}</p>
                 </div> : ""}
             </form>

@@ -1,6 +1,6 @@
 .home-container {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background: linear-gradient(to top, #010101ec, #2c3239d4), url('../Images/home.jpeg') fixed;
     background-size: cover;
     padding: 70px 20px;
@@ -10,3 +10,4 @@
     align-items: center;
     gap: 30px
 }
+

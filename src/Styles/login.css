@@ -60,3 +60,22 @@
 .login-items a:hover {
     background: var(--fourth-color);
 }
+
+
+@media (max-width: 1040px) {
+    .login-content {
+        width: 0px;
+    }
+}
+
+@media (max-width: 500px) {
+    .login-items a {
+        width: 200px;
+        gap: 20px;
+    }
+
+    .login-items a img {
+        width: 50px;
+    }
+}
+

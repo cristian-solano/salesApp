@@ -260,7 +260,7 @@
 
 .order-list-complete-card-my-orders {
     width: 100%;
-    display: flex;
+    display: flex; 
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -280,4 +280,22 @@
 .order-list-complete-card-my-orders a:hover {
     background-color: var(--fifth-color);
     color: var(--secondary-color);
+}
+
+@media (max-width: 1265px) {
+    .order-list-content {
+        width: 40%;
+    }
+}
+
+@media (max-width: 768px) {
+    .order-list-content {
+        width: 55%;
+    }
+}
+
+@media (max-width: 600px) {
+    .order-list-content {
+        width: 100%;
+    }
 }

@@ -1,0 +1,32 @@
+.close-session-content {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+}
+
+.close-session-content button{
+    background: none;
+    outline: none;
+    border: none;
+    background-color: var(--fourth-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.close-session-content button:hover {
+    transform: scale(1.1);
+}
+
+.close-session-content button img {
+    width: 50px;
+}
+

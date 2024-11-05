@@ -4,6 +4,7 @@ import { db } from '../Firebase/firebase';
 import '../Styles/orders.css'
 import iconDelete from '../Images/icondelete.png'
 import StateControl from './StateControl';
+import CloseSession from './CloseSession';
 
 
 
@@ -111,6 +112,7 @@ const Orders = () => {
             </div>}
         
       </div>
+      <CloseSession/>
     </div>
   )
 }

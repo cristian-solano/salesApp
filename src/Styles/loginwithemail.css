@@ -151,3 +151,38 @@
     font-size: 35px;
     
 }
+
+.login-email-error {
+    font-size: 13px;
+    color: red;
+}
+
+.login-email-error p {
+    text-align: center;
+}
+
+@media (max-width: 605px) {
+    .login-email-container {
+        flex-direction: column-reverse;
+    }
+    
+    .login-email-message {
+        width: auto;
+        border-left: 0px;
+        border-bottom: 1px solid;
+    }
+
+    .login-email-content {
+        width: auto;
+    }
+}
+
+@media (max-width: 414px) {
+    .login-email-content {
+        padding: 20px;
+    }
+
+    .login-email-redirection h5 {
+        text-align: center;
+    }
+}

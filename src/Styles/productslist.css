@@ -154,5 +154,19 @@
     width: 30px;
 }
 
+@media (max-width: 768px) {
+    .product-list-container {
+        justify-content: flex-start;
+    }
 
+    .product-list-content {
+        grid-template-columns: auto auto;
+        
+    }
+}
 
+@media (max-width: 470px) {
+    .product-list-content {
+        grid-template-columns: auto;
+    }
+}

@@ -49,3 +49,23 @@
     font-size: 35px;
 }
 
+
+@media (max-width:1080px) {
+    .login-google-container {
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+
+    .login-google-message {
+        border-left: 0px;
+        border-bottom: 1px solid;
+    }
+}
+
+@media (max-width: 414px) {
+    .login-google-button button {
+        width: 200px;
+        height: auto;
+    }
+}
+
