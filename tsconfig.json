@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es6",                           // Define la versión de ECMAScript a la que se compilará el código.
+    "lib": ["dom", "dom.iterable", "esnext"],  // Incluye las bibliotecas que el proyecto usará.
+    "allowJs": true,                           // Permite importar archivos JavaScript junto a los de TypeScript.
+    "skipLibCheck": true,                      // Omite la verificación de tipos en los archivos de definición.
+    "esModuleInterop": true,                   // Permite importaciones de módulos compatibles con CommonJS.
+    "allowSyntheticDefaultImports": true,      // Permite la importación de módulos sin especificar "default".
+    "strict": true,                            // Activa todas las verificaciones estrictas de tipos.
+    "forceConsistentCasingInFileNames": true,  // Exige un uso coherente de mayúsculas y minúsculas en los nombres de archivo.
+    "module": "esnext",                        // Usa ESNext como sistema de módulos (común para React).
+    "moduleResolution": "node",                // Permite la resolución de módulos en estilo Node.js.
+    "resolveJsonModule": true,                 // Permite la importación de archivos JSON.
+    "isolatedModules": true,                   // Activa el aislamiento de módulos, lo que es necesario para proyectos de React con TypeScript.
+    "noEmit": true,                            // No emite archivos de salida; solo hace la verificación de tipos.
+    "jsx": "react-jsx"                         // Activa el soporte JSX para React.
+  },
+  "include": ["src"],                          // Incluye la carpeta `src` en la compilación.
+  "exclude": ["node_modules", "build"]         // Excluye `node_modules` y `build` para evitar errores.
+}

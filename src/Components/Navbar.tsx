@@ -3,7 +3,8 @@ import icon from '../Images/logoSales.png'
 import '../Styles/navbar.css'
 
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
+  
   return (
     <div className='navbar-container'>
         <div className='navbar-content'>

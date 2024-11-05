@@ -6,11 +6,23 @@ import iconDelete from '../Images/icondelete.png'
 import StateControl from './StateControl';
 import CloseSession from './CloseSession';
 
+interface Product {
+  product: string;
+  price: number;
+}
 
+interface Order {
+  id: string;
+  email: string;
+  amount: number;
+  createAt: string;
+  currentState: string;
+  items: Product[];
+}
 
-const Orders = () => {
+const Orders: React.FC = () => {
 
-  const [sales, setSales] = useState([]);
+  const [sales, setSales] = useState<Order[]>([]);
   const [loading, setLoading] = useState(true);
   const [newStatus, setNewStatus] = useState(''); 
 
@@ -28,7 +40,7 @@ const Orders = () => {
                 month: "2-digit",
                 year: "numeric"
             }), id
-          }
+          } as Order
       });
       setSales(salesList);
       setLoading(false);
@@ -38,7 +50,7 @@ const Orders = () => {
     }
   };
 
-  const updateState = async (id_order, newStatus) => {
+  const updateState = async (id_order: string, newStatus: string) => {
     try {
         const orderRef = doc(db, "orders", id_order);
         await updateDoc(orderRef, { currentState: newStatus });
@@ -54,7 +66,7 @@ const Orders = () => {
     }
   };
 
-  const deleteOrder = async(id_order) => {
+  const deleteOrder = async(id_order: string) => {
     try {
       const deleteOrderById = doc(db, "orders", id_order)
 
@@ -65,7 +77,7 @@ const Orders = () => {
     }
   }
 
-  const handlerOnChangeState = (e) => {
+  const handlerOnChangeState = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setNewStatus(e.target.value)
   }
 

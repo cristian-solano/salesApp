@@ -8,11 +8,24 @@ import carblank from '../Images/carblank.png'
 import { Link } from 'react-router-dom';
 import list from '../Images/list.png'
 
-const ProductsList = () => {
+interface Product {
+    id: string;
+    name_product: string;
+    amount_product: number;
+    photo: string;
+  }
+  
+  interface MyProduct {
+    id: string;
+    product: string;
+    price: number;
+  }
 
-    const [products, setProducts] = useState([]);
+const ProductsList: React.FC = () => {
+
+    const [products, setProducts] = useState<Product[]>([]);;
     const [loading, setLoading] = useState(true)
-    const [myProducts, setMyProducts] = useState([])
+    const [myProducts, setMyProducts] = useState<MyProduct[]>([])
     
 
 
@@ -23,7 +36,7 @@ const ProductsList = () => {
             const productsList = productsSnapshot.docs.map((doc) => ({
                 id: doc.id, 
                 ...doc.data() 
-      }));
+      })) as Product[];
         setProducts(productsList)
         setLoading(false)
         } catch (error) {
@@ -36,7 +49,7 @@ const ProductsList = () => {
         getProducts()
     }, [])
 
-    const addProducts = (product, id, price) => {
+    const addProducts = (product: string, id: string, price: number) => {
 
         const limit = myProducts.filter(item => item.id === id).length;
 

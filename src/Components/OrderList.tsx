@@ -6,10 +6,29 @@ import { db } from '../Firebase/firebase';
 import check from '../Images/check.png'
 import { Link } from 'react-router-dom';
 
-const OrderList = ({myproducts}) => {
+interface Product {
+    id: string;
+    product: string;
+    price: number;
+  }
+  
+  interface OrderListProps {
+    myproducts: Product[];
+  }
+  
+  interface OrderInfo {
+    amount: number;
+    email: string | null;
+    id_client: string | null;
+    items: Product[];
+    createAt: Date;
+    currentState: string;
+  }
+
+const OrderList:  React.FC<OrderListProps> = ({myproducts}) => {
 
     const {handleSubmit} = useForm()
-    const [info, setInfo] = useState(null)
+    const [info, setInfo] = useState<OrderInfo | null>(null)
     const [watchSale, setWatchSale] = useState(false)
 
     const handlerOnChange = () => {
@@ -24,10 +43,9 @@ const OrderList = ({myproducts}) => {
     const name = sessionStorage.getItem("email")
     const id_person = sessionStorage.getItem("id")
 
-    const onSubmit = async(res) => {
+    const onSubmit = async() => {
         const totalamount = myproducts.reduce((total, item) => total + item.price, 0)
-        const data = 
-            {
+        const data = {
                 amount: totalamount,
                 email: name,
                 id_client: id_person,
@@ -93,7 +111,7 @@ const OrderList = ({myproducts}) => {
         </div>
         
         
-        {watchSale === true ? 
+        {watchSale && info && 
         <div className='order-list-complete-content'>
             <div className='order-list-complete-card'>
                 <div className='order-list-complete-card-title'>
@@ -105,7 +123,7 @@ const OrderList = ({myproducts}) => {
                     <p>Correo: {info?.email}</p>
                 </div>
                 <div className='order-list-complete-card-sales'>
-                    {info?.items.length > 0 ? info.items.map((info, i) => (
+                    {info?.items.length > 0 ? info?.items.map((info, i) => (
                     <div className='order-list-complete-card-client-data' key={info.id}>
                         <span>{i+1}.</span>
                         <p>{info.product}</p>
@@ -121,8 +139,7 @@ const OrderList = ({myproducts}) => {
                     <Link to="/orders">Dirigite a compras</Link>
                 </div>
             </div>
-        </div>
-        : ""}
+        </div>}
     </div>
     
   )

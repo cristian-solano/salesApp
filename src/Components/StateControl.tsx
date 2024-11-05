@@ -2,7 +2,17 @@ import React from 'react'
 import check from '../Images/check.png'
 import '../Styles/statecontrol.css'
 
-const StateControl = ({newStatus,state, amount, update, id, change}) => {
+interface StateControlProps {
+  newStatus: string;
+  state: string;
+  amount: number;
+  update: (id: string, newStatus: string) => void;
+  id: string;
+  change: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+}
+
+
+const StateControl: React.FC<StateControlProps> = ({newStatus,state, amount, update, id, change}) => {
 
     
   return (

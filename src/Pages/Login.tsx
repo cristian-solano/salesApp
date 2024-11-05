@@ -4,7 +4,7 @@ import '../Styles/login.css'
 import google from '../Images/google.png'
 import plus from '../Images/mas.png'
 
-const Login = () => {
+const Login: React.FC = () => {
   return (
     <div className='login-container'>
         <div className='login-links'>

@@ -1,40 +1,35 @@
 import React, { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, db } from '../Firebase/firebase';
-import { useForm } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import visible from '../Images/visible.png'
 import novisible from '../Images/novisible.png'
 import '../Styles/register.css'
 import { Link } from 'react-router-dom';
 import { addDoc, collection } from 'firebase/firestore';
 
-const Register = () => {
+interface RegisterFormValues {
+    name: string;
+    id: string;
+    emails: string;
+    password: string;
+    confirmPassword: string;
+  }
+  
 
-    const {register, handleSubmit, setError, formState: {errors}} = useForm()
-    const [watch, setWatch] = useState(true)
-    const [watch2, setWatch2] = useState(true)
-    const [messageConfirm, setMessageConfirm] = useState(null)
+const Register: React.FC = () => {
 
-
-    const handlerOnChange = () => {
-        if(watch){
-            setWatch(false)
-        } else {
-            setWatch(true)
-        }
-        
-    }
-
-    const secondHandlerOnChange = () => {
-        if(watch2){
-            setWatch2(false)
-        } else {
-            setWatch2(true)
-        }
-    }
+    const {register, handleSubmit, setError, formState: {errors}} = useForm<RegisterFormValues>()
+    const [watch, setWatch] = useState<boolean>(true)
+    const [watch2, setWatch2] = useState<boolean>(true)
+    const [messageConfirm, setMessageConfirm] = useState<string | null>(null)
 
 
-    const onSubmit = async(res) => {
+    const handlerOnChange = () => setWatch(prev => !prev);
+    const secondHandlerOnChange = () => setWatch2(prev => !prev);
+
+
+    const onSubmit: SubmitHandler<RegisterFormValues> = async(res) => {
         const { name, id, emails, password, confirmPassword } = res;
         if (password !== confirmPassword) {
         setError("confirmPassword", {
@@ -58,7 +53,7 @@ const Register = () => {
                 nit_client: id
             })
             
-          } catch (error) {
+          } catch (error: any) {
             console.log("Error code:", error.code, "Error message:", error.message);
             setError("id", {
               type: "manual",
@@ -95,7 +90,7 @@ const Register = () => {
                         },
                     })}
                     />
-                    {errors.email && <p>{errors.email.message}</p>}
+                    {errors.emails && <p>{errors.emails.message}</p>}
                 </div>
                 <div className='register-fields-password'>
                     <label htmlFor='password'>Nueva contraseña</label>

@@ -7,8 +7,9 @@ import LoginWithGoogle from './Pages/LoginWithGoogle';
 import Register from './Pages/Register';
 import Navbar from './Components/Navbar';
 import Orders from './Components/Orders';
+import React from 'react';
 
-function App() {
+const App: React.FC = () => {
   return (
     <Router>
       <div className="container">

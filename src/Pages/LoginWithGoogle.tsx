@@ -34,7 +34,7 @@ const LoginWithGoogle = () => {
           console.log("User:", user, "Token:", token);
           
     
-        } catch (error) {
+        } catch (error: any) {
           console.log("Error code:", error.code, "Error message:", error.message);
           console.log("Email:", error.customData?.email);
           const credential = GoogleAuthProvider.credentialFromError(error);

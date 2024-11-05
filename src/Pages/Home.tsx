@@ -3,7 +3,7 @@ import ProductsList from '../Components/ProductsList'
 import '../Styles/home.css'
 import CloseSession from '../Components/CloseSession'
 
-const Home = () => {
+const Home: React.FC = () => {
   return (
     <div className='home-container'>
       <ProductsList/>

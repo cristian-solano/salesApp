@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 import {signInWithEmailAndPassword } from 'firebase/auth';
 import {auth} from '../Firebase/firebase';
 import { Link, useNavigate } from 'react-router-dom';
@@ -7,10 +7,10 @@ import visible from '../Images/visible.png'
 import novisible from '../Images/novisible.png'
 
 const LoginWithEmail = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [watch, setWatch] = useState(true)
-  const [newError, setNewError] = useState(null)
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [watch, setWatch] = useState<boolean>(true);
+  const [newError, setNewError] = useState<string | null>(null);
   const navigate = useNavigate()
 
 
@@ -22,7 +22,7 @@ const LoginWithEmail = () => {
     }
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!email || !password) {
       console.error("Escribe tu correo y contraseña");
@@ -34,10 +34,10 @@ const LoginWithEmail = () => {
       console.log(user)
       navigate('/home')
       sessionStorage.setItem('id', user.uid)
-      sessionStorage.setItem('email', user.email)
+      sessionStorage.setItem('email', user.email || '')
    
 
-    } catch (error) {
+    } catch (error: any) {
       console.log("Error code:", error.code, "Error message:", error.message);
       setNewError("Error de autenticación, verifique que contraseña y correo sean correctos")
     }
