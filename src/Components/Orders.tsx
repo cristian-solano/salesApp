@@ -45,7 +45,7 @@ const Orders: React.FC = () => {
       setSales(salesList);
       setLoading(false);
     } catch (error) {
-      console.error("Error al obtener los productos:", error);
+      console.log("Error al obtener los productos:", error);
       setLoading(false);
     }
   };
@@ -62,18 +62,17 @@ const Orders: React.FC = () => {
             )
         );
     } catch (error) {
-        console.error("Error al actualizar la orden:", error);
+        console.log("Error al actualizar la orden:", error);
     }
   };
 
   const deleteOrder = async(id_order: string) => {
     try {
       const deleteOrderById = doc(db, "orders", id_order)
-
       await deleteDoc(deleteOrderById)
       setSales(myOrders => myOrders.filter(order => order.id !== id_order));
     } catch (error) {
-      console.error("Error al eliminar la orden:", error);
+      console.log("Error al eliminar la orden:", error);
     }
   }
 

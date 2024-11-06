@@ -59,7 +59,7 @@ const OrderList:  React.FC<OrderListProps> = ({myproducts}) => {
                 await addDoc(collection(db, "orders"), data);
                 setInfo(data);
             } catch (error) {
-                console.error("Error al guardar la orden:", error);
+                console.log("Error al guardar la orden:", error);
             }
         
     }

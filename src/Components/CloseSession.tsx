@@ -11,16 +11,15 @@ const auth = getAuth()
 
 const handleSignOut = () => {
   signOut(auth)
-    .then(() => {
+    try {
       localStorage.clear();
       sessionStorage.clear();
       setTimeout(() => {
         navigate('/');
       }, 1000);
-    })
-    .catch((error) => {
-      console.error("Error signing out: ", error);
-    });
+    } catch (error) {
+      console.log("Error signing out: ", error);
+    }
 };
 
   return (
