@@ -38,29 +38,29 @@ import userEvent from '@testing-library/user-event';
     it('calls signOut and navigate on button click', async () => {
       render(<CloseSession />);
 
-      // Simular el clic en el botón de cierre de sesión
+      
      
         const signOutButton = screen.getByRole('button');
         await  userEvent.click(signOutButton);
   
-        // Esperar a que signOut se haya llamado
+        
         await waitFor(() => expect(signOut).toHaveBeenCalled());
   
-        // Verificar que navigate se haya llamado después de un tiempo
+        
         await waitFor(() => expect(navigate).toHaveBeenCalledWith('/'));
     });
   
     it('clears localStorage and sessionStorage on sign-out', async () => {
       render(<CloseSession />);
   
-      // Establecer valores de prueba en el almacenamiento antes de hacer sign-out
+      
       localStorage.setItem('test', 'value');
       sessionStorage.setItem('test', 'value');
   
       const signOutButton = screen.getByRole('button');
       await userEvent.click(signOutButton);
   
-      // Esperar a que se ejecute el sign-out y limpiar el almacenamiento
+      
       await waitFor(() => {
         expect(localStorage.getItem('test')).toBeNull();
         expect(sessionStorage.getItem('test')).toBeNull();

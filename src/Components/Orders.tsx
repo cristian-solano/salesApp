@@ -23,6 +23,8 @@ interface Order {
 const Orders: React.FC = () => {
 
   const [sales, setSales] = useState<Order[]>([]);
+  const [filteredOrders, setFilteredOrders] = useState<Order[]>([]);
+  const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
   const [newStatus, setNewStatus] = useState(''); 
 
@@ -43,6 +45,7 @@ const Orders: React.FC = () => {
           } as Order
       });
       setSales(salesList);
+      setFilteredOrders(salesList);
       setLoading(false);
     } catch (error) {
       console.log("Error al obtener los productos:", error);
@@ -80,6 +83,23 @@ const Orders: React.FC = () => {
     setNewStatus(e.target.value)
   }
 
+
+  const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const searchValue = e.target.value;
+    setSearch(searchValue);
+  
+
+    if (searchValue === "") {
+      setFilteredOrders(sales);
+    } else {
+      const filtered = sales.filter((order) =>
+        order.id.toLowerCase().includes(searchValue)
+      );
+      setFilteredOrders(filtered);
+    }
+  };
+
+
   useEffect(() => {
     getSales();
   }, []);
@@ -90,8 +110,16 @@ const Orders: React.FC = () => {
 
   return (
     <div className='orders-container'>
+      <div className='orders-filter'>
+        <input
+          type="text"
+          placeholder="Escribe el Código del recibo"
+          value={search}
+          onChange={handleFilterChange}
+        />
+        </div>
       <div className='orders-content'>
-        {sales.length > 0 ? sales.map((items, i) => (
+        {filteredOrders.length > 0 ? filteredOrders.map((items, i) => (
           <div className='orders-info' key={items.id}>
             <h3>Recibo No. {items.id}</h3>
             <p>Fecha de pedido:{items.createAt}</p>

@@ -11,6 +11,22 @@
     gap: 30px
 }
 
+.orders-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.orders-filter input {
+    width: 250px;
+    height: 40px;
+    outline: none;
+    background: #ffffffe9;
+    border: none;
+    padding: 0 15px;
+    border-radius: 5px;
+}
+
 .orders-content {
     width: auto;
     display: grid;
@@ -130,5 +146,7 @@
         grid-template-columns: auto;
     }
 }
+
+
 
 
