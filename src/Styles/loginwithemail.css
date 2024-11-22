@@ -133,8 +133,12 @@
     color: inherit;
 }
 
-.login-email-redirection h5:hover {
+.login-email-redirection h5 {
     border-bottom: 1px solid;
+}
+
+.login-email-redirection h5:hover {
+    font-style: italic;
 }
 
 .login-email-message {
@@ -148,8 +152,7 @@
 }
 
 .login-email-message h3 {
-    font-size: 35px;
-    
+    font-size: 35px;   
 }
 
 .login-email-error {

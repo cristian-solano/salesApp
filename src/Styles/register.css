@@ -1,6 +1,6 @@
 .register-container {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -142,3 +142,24 @@
 }
 
 
+@media (max-width: 800px) {
+    .register-container {
+        justify-content: flex-start;
+        padding: 80px 30px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .register-fields input {
+        width: 250px;
+    }
+
+    .register-password {
+        width: 250px;
+    }
+
+    .register-password p img {
+        width: 20px;
+    }
+
+}
